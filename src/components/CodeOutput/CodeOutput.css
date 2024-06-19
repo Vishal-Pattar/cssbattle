@@ -1,0 +1,15 @@
+.outputbox {
+    height: 90vh;
+    width: 30%;
+    background-color: #555;
+    position: absolute;
+    top: 0px;
+    left: 40%;
+}
+
+.coderender {
+    height: 300px;
+    width: 400px;
+    background-color: antiquewhite;
+    margin: 20px auto;
+}

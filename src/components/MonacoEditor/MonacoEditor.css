@@ -1,0 +1,8 @@
+.editor-box {
+    height: 90vh;
+    width: 40%;
+    background-color: #ac0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
