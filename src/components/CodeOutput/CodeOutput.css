@@ -1,15 +1,24 @@
 .outputbox {
     height: 90vh;
-    width: 30%;
-    background-color: #555;
+    width: 450px;
+    background-color: #a0c;
     position: absolute;
     top: 0px;
-    left: 40%;
+    right: 450px;
 }
 
 .coderender {
+    min-height: 300px;
+    min-width: 400px;
+    max-height: 300px;
+    max-width: 400px;
+    background-color: antiquewhite;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.renderhere {
     height: 300px;
     width: 400px;
-    background-color: antiquewhite;
-    margin: 20px auto;
 }

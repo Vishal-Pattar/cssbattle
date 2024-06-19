@@ -1,6 +1,6 @@
 .editor-box {
     height: 90vh;
-    width: 40%;
+    width: calc(100% - 900px);
     background-color: #ac0;
     position: absolute;
     top: 0px;

@@ -1,0 +1,16 @@
+.targetbox {
+    height: 90vh;
+    width: 450px;
+    background-color: #555;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.targetrender {
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}

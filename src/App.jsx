@@ -1,15 +1,14 @@
 import React from 'react';
-import MonacoEditor from './components/MonacoEditor/MonacoEditor';
-import CodeOutput from './components/CodeOutput/CodeOutput';
-import useCodeContent from './hooks/useCodeContent';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AppContent from './components/AppContent/AppContent';
 
 const App = () => {
-    const [codeContent, updateCodeContent] = useCodeContent();
     return (
-        <div className="app">
-            <MonacoEditor codeContent={codeContent} updateCodeContent={updateCodeContent} />
-            <CodeOutput codeContent={codeContent} />
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/:id" element={<AppContent />} />
+            </Routes>
+        </Router>
     );
 };
 
