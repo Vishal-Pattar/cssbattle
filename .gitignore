@@ -10,7 +10,6 @@
 
 # production
 /build
-/cssbattle-backend
 
 # misc
 .DS_Store
