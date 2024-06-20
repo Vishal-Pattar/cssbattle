@@ -10,6 +10,8 @@
 
 # production
 /build
+copyFiles.js
+GithubPush.js
 
 # misc
 .DS_Store

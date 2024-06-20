@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 const useCodeContent = () => {
-    const initialContent = `
-<div></div>
+    const initialContent = `<div></div>
 <style>
     div{
         width: 100px;

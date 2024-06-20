@@ -2,10 +2,10 @@
 
 .editor-box {
     height: 85vh;
-    width: calc(100% - 900px);
+    width: calc(100% - 904px);
     background-color: var(--primary-bg);
     position: absolute;
     top: 5vh;
     left: 0px;
-    padding: 5px;
+    padding-top: 10px;
 }
