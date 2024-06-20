@@ -1,3 +1,6 @@
 [submodule "cssbattle-backend"]
 	path = cssbattle-backend
 	url = https://github.com/Vishal-Pattar/cssbattle-backend.git
+[submodule "cssbattle-frontend"]
+	path = cssbattle-frontend
+	url = https://github.com/Vishal-Pattar/cssbattle-frontend.git
