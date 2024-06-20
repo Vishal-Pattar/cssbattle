@@ -4,6 +4,7 @@ import MonacoEditor from '../MonacoEditor/MonacoEditor';
 import CodeOutput from '../CodeOutput/CodeOutput';
 import useCodeContent from '../../hooks/useCodeContent';
 import ActualTarget from '../ActualTarget/ActualTarget';
+import BottomRow from '../BottomRow/BottomRow'
 import './AppContent.css'
 
 const AppContent = () => {
@@ -15,6 +16,7 @@ const AppContent = () => {
             <MonacoEditor codeContent={codeContent} updateCodeContent={updateCodeContent} />
             <CodeOutput codeContent={codeContent} />
             <ActualTarget id={id} />
+            <BottomRow id={id} codeContent={codeContent} />
         </div>
     );
 };
