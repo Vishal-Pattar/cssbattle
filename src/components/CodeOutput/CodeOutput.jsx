@@ -24,7 +24,8 @@ const CodeOutput = ({ codeContent }) => {
     });
 
     return (
-        <div className='outputbox'>
+        <div className='output-container'>
+            <div className='output-header'><span>Code Output</span></div>
             <div className='coderender'>
                 <div className='renderhere' dangerouslySetInnerHTML={{ __html: div.innerHTML }} />
             </div>

@@ -1,13 +1,33 @@
 @import '../../root.css';
 
-.outputbox {
-    height: 85vh;
-    width: 452px;
-    background-color: var(--primary-bg);
+.output-container {
+    height: var(--container-height);
+    width: 450px;
+    background-color: var(--main-bg-color);
     position: absolute;
-    top: 5vh;
+    top: 0vh;
     right: 450px;
-    border-right: 2px solid #555;
+    border-right: 2px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
+}
+
+.output-header {
+    height: 5vh;
+    width: 450px;
+    background-color: var(--header-bg-color);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 5vh;
+    font-weight: 500;
+    color: var(--text-color);
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.output-header span {
+    padding: 0 15px;
 }
 
 .coderender {
@@ -17,7 +37,7 @@
     max-width: 400px;
     background-color: #fff;
     position: absolute;
-    top: 25px;
+    top: calc(5vh + 25px + 4px);
     left: 25px;
 }
 
