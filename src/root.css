@@ -1,3 +1,8 @@
-:root{
-    --primary-bg: #07080b;
+:root {
+    --main-bg-color: #07080b;
+    --text-color: #a0b3c6;
+    --header-bg-color: #2a313a;
+    --border-color: rgba(160, 179, 198, 0.2);
+    --container-height: 85vh;
+    --alert-box-width: 380px;
 }
