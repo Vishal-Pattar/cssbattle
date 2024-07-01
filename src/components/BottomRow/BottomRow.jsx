@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-import Button from '@mui/material/Button';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useScore from '../../hooks/useScore';
 import './BottomRow.css';
 
 const BottomRow = ({ id, codeContent }) => {
     const [score, updateScore] = useScore();
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [scoreUpdateTrigger, setScoreUpdateTrigger] = useState(false);
 
     const handleSubmit = async () => {
         const payload = {
@@ -14,8 +15,10 @@ const BottomRow = ({ id, codeContent }) => {
         };
 
         try {
+            setIsButtonDisabled(true);
             const response = await axios.post('https://cssbattle-backend.onrender.com/process', payload);
             updateScore(response.data.score);
+            setScoreUpdateTrigger(prev => !prev);
         } catch (error) {
             console.error('Error:', error);
         }
@@ -23,13 +26,18 @@ const BottomRow = ({ id, codeContent }) => {
 
     useEffect(() => {
         if (score !== -1) {
+            setIsButtonDisabled(false);
             alert(`You Scored: ${score.toFixed(2)}`);
         }
-    }, [score]);
+    }, [scoreUpdateTrigger]);
 
     return (
         <div className="row">
-            <Button variant='contained' sx={{ margin: '8px' }} onClick={handleSubmit}>Submit</Button>
+            <button type='button' 
+            className={`submit-button ${isButtonDisabled ? 'disabled' : ''}`} 
+            onClick={handleSubmit}
+            disabled={isButtonDisabled} >Submit</button>
+            <div>&copy;2024 cssbattle</div>
         </div>
     );
 };
