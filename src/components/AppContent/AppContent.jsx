@@ -12,12 +12,14 @@ const AppContent = () => {
     const [codeContent, updateCodeContent] = useCodeContent();
 
     return (
-        <div className="app">
-            <MonacoEditor codeContent={codeContent} updateCodeContent={updateCodeContent} />
-            <CodeOutput codeContent={codeContent} />
-            <ActualTarget id={id} />
+        <>
+            <div className="app">
+                <MonacoEditor codeContent={codeContent} updateCodeContent={updateCodeContent} />
+                <CodeOutput codeContent={codeContent} />
+                <ActualTarget id={id} />
+            </div>
             <BottomRow id={id} codeContent={codeContent} />
-        </div>
+        </>
     );
 };
 

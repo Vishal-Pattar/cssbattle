@@ -1,5 +1,12 @@
+@import '../../root.css';
+
 .app {
-  display: flex;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: var(--container-height);
+    width: 100vw;
+    position: absolute;
+    top: 7vh;
+    left: 0px;
 }
