@@ -1,11 +1,37 @@
 @import '../../root.css';
 
-.editor-box {
-    height: 85vh;
-    width: calc(100% - 904px);
-    background-color: var(--primary-bg);
+.editor-container {
+    height: var(--container-height);
+    width: calc(100vw - 902px);
+    background: var(--main-bg-color);
     position: absolute;
-    top: 5vh;
-    left: 0px;
-    padding-top: 10px;
+    top: 0;
+    left: 0;
+}
+
+.editor-header {
+    height: 5vh;
+    width: calc(100vw - 902px);
+    background-color: var(--header-bg-color);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 5vh;
+    font-weight: 500;
+    color: var(--text-color);
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.editor-header span {
+    padding: 0 15px;
+}
+
+.editor-content {
+    height: calc(var(--container-height) - 5vh - 14px);
+    width: calc(100vw - 904px);
+    position: relative;
+    top: 10px;
+    background-color: var(--main-bg-color);
 }

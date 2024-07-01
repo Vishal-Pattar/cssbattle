@@ -3,14 +3,15 @@ import Editor, { useMonaco } from '@monaco-editor/react';
 import './MonacoEditor.css';
 
 const MonacoEditor = ({ codeContent, updateCodeContent }) => {
-    const monaco = useMonaco();
+    const monacoInstance = useMonaco();
+
     useEffect(() => {
-        if (monaco) {
-            monaco.languages.html.htmlDefaults.setOptions({
+        if (monacoInstance) {
+            monacoInstance.languages.html.htmlDefaults.setOptions({
                 suggestions: false,
             });
             // Define CSS Battle theme
-            monaco.editor.defineTheme('cssBattleTheme', {
+            monacoInstance.editor.defineTheme('cssBattleTheme', {
                 base: 'vs-dark',
                 inherit: true,
                 rules: [
@@ -20,35 +21,40 @@ const MonacoEditor = ({ codeContent, updateCodeContent }) => {
                     { token: 'string', foreground: 'ffcc99' },
                     { token: 'tag', foreground: 'e06c75' },
                     { token: 'number', foreground: 'd19a66' },
-
                 ],
                 colors: {
-                    'editor.background': '#07080b'
+                    'editor.background': '#07080b',
                 },
             });
 
-            monaco.editor.setTheme('cssBattleTheme');
+            monacoInstance.editor.setTheme('cssBattleTheme');
         }
-    }, [monaco]);
+    }, [monacoInstance]);
 
     return (
-        <div className='editor-box'>
-            <Editor
-                height='100%'
-                width='100%'
-                theme='cssBattleTheme'
-                defaultLanguage="html"
-                value={codeContent}
-                onChange={(value) => updateCodeContent(value)}
-                options={{
-                    minimap: { enabled: false },
-                    quickSuggestions: false,
-                    acceptSuggestionOnEnter: 'off',
-                    suggestOnTriggerCharacters: false,
-                    tabCompletion: 'off',
-                    wordBasedSuggestions: false,
-                }}
-            />
+        <div className="editor-container">
+            <div className="editor-header">
+                <span>Editor</span>
+                <span>500 characters</span>
+            </div>
+            <div className="editor-content">
+                <Editor
+                    height="100%"
+                    width="100%"
+                    theme="cssBattleTheme"
+                    defaultLanguage="html"
+                    value={codeContent}
+                    onChange={(value) => updateCodeContent(value)}
+                    options={{
+                        minimap: { enabled: false },
+                        quickSuggestions: false,
+                        acceptSuggestionOnEnter: 'off',
+                        suggestOnTriggerCharacters: false,
+                        tabCompletion: 'off',
+                        wordBasedSuggestions: false,
+                    }}
+                />
+            </div>
         </div>
     );
 };
