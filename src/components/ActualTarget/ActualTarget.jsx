@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ActualTarget.css';
 import jsonData from '../../data/data.json';
+import { IoInformationCircle } from "react-icons/io5";
 
 const ActualTarget = ({ id }) => {
     const [data, setData] = useState(null);
@@ -15,7 +16,7 @@ const ActualTarget = ({ id }) => {
         // Hide alert box after 5 seconds
         setTimeout(() => {
             setDisplayAlert(false);
-        }, 3000);
+        }, 5000);
     };
 
     useEffect(() => {
@@ -30,21 +31,26 @@ const ActualTarget = ({ id }) => {
     const targetImage = require(`../../assets/expected_${id}.png`);
 
     return (
-        <div className='targetbox'>
-            <div className='targetrender'>
+        <div className='target-container'>
+            <div className='target-header'>
+                <span>Recreate this Target</span>
+                <span>400px x 300px</span>
+            </div>
+            <div className='target-render'>
                 <img src={targetImage} alt={`Challenge ${id}`} />
             </div>
             <div className='color-pallet'>
                 {colorArray.map((color, index) => (
                     <div key={index} className='color-pot' onClick={() => handleCopy(color)}>
                         <div className='disp-color' style={{ backgroundColor: color }}></div>
-                        <span className='disp-name'>{color}</span>
+                        <div className='disp-name'>{color}</div>
                     </div>
                 ))}
             </div>
             {displayAlert && (
                 <div className='alert-box'>
-                    <span>Color {copiedColor} copied to clipboard</span>
+                    <div className='alert-box-text'><IoInformationCircle style={{fontSize: '25px', marginBottom: '-5px', color: '#3496DB' }}/>  Color {copiedColor} copied to clipboard</div>
+                    <div className='alert-box-anime'></div>
                 </div>
             )}
         </div>

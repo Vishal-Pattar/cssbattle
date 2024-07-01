@@ -1,72 +1,134 @@
 @import '../../root.css';
 
-.targetbox {
-    height: 85vh;
+.target-container {
+    height: var(--container-height);
     width: 450px;
-    background-color: var(--primary-bg);
+    background-color: var(--main-bg-color);
     position: absolute;
-    top: 5vh;
+    top: 0vh;
     right: 0px;
 }
 
-.targetrender {
+.target-header {
+    height: 5vh;
+    width: 450px;
+    background-color: var(--header-bg-color);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 5vh;
+    font-weight: 500;
+    color: var(--text-color);
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.target-header span {
+    padding: 0 15px;
+}
+
+.target-render {
     height: 300px;
     width: 400px;
     position: absolute;
-    top: 25px;
+    top: calc(5vh + 25px + 4px);
     left: 25px;
 }
 
-.color-pallet{
+.color-pallet {
     height: 100px;
     width: 400px;
-    background-color: var(--primary-bg);
+    background-color: var(--main-bg-color);
     position: absolute;
-    top: 350px;
+    top: calc(5vh + 350px + 4px);
     left: 25px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.color-pot{
-    height: 40px;
-    width: 140px;
-    border-radius: 40px;
+.color-pot {
+    height: 38px;
+    width: 130px;
+    border-radius: 36px;
     display: flex;
-    background-color: #2D3740;
-    margin: 5px;
+    background-color: var(--header-bg-color);
+    margin: 10px;
     user-select: none;
 }
 
+.color-pot:hover {
+    scale: 1.01;
+}
+
 .disp-color {
+    height: 23px;
+    width: 23px;
+    border-radius: 28px;
+    margin: 6.5px;
+    border: 2px solid var(--main-bg-color);
+}
+
+.color-pot:hover .disp-color {
     height: 28px;
     width: 28px;
-    border-radius: 28px; 
-    margin: 5px;
-    border: 2px solid var(--primary-bg);
-}
-.disp-name {
-    height: 30px;
-    width: 80px;
-    font-size: 22px;
+    border-radius: 28px;
     margin: 4px;
-    margin-left: 0px;
+}
+
+.disp-name {
+    line-height: 36px;
+    font-size: 20px;
     cursor: pointer;
     font-weight: 400;
     color: #A0B3C6;
 }
 
 .alert-box {
-    height: 30px;
-    width: 400px;
-    background-color: #2D3740;
+    width: var(--alert-box-width);
+    background-color: #121212;
     color: #fff;
     position: fixed;
-    bottom: 100px;
+    bottom: 8vh;
     right: 10px;
     font-size: 20px;
-    padding: 5px;
     font-weight: 400;
     z-index: 10;
     display: block;
+    transition: right 1s ease-in-out;
+    animation: alert;
+    animation-duration: 1s;
+}
+
+/* @keyframes alert {
+    0% {right: -100%}
+    100% {right: 10px}
+} */
+
+.alert-box-text {
+    margin: 10px 10px;
+}
+
+.alert-box-anime {
+    width: 0px;
+    background-color: #3496DB;
+    animation-name: alert-box-border;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    height: 4px;
+    float: inline-end;
+}
+
+@keyframes alert-box-border {
+    0% {width: 0px;}
+    10% {width: calc(var(--alert-box-width) / 10);}
+    20% {width: calc(var(--alert-box-width)*2 / 10);}
+    30% {width: calc(var(--alert-box-width)*3 / 10);}
+    40% {width: calc(var(--alert-box-width)*4 / 10);}
+    50% {width: calc(var(--alert-box-width)*5 / 10);}
+    60% {width: calc(var(--alert-box-width)*6 / 10);}
+    70% {width: calc(var(--alert-box-width)*7 / 10);}
+    80% {width: calc(var(--alert-box-width)*8 / 10);}
+    90% {width: calc(var(--alert-box-width)*9 / 10);}
+    100% {width: calc(var(--alert-box-width));}
 }
