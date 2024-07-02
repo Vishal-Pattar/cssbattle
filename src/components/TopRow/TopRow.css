@@ -1,0 +1,18 @@
+@import '../../root.css';
+
+.top-row {
+    height: 8vh;
+    width: 100vw;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    position: absolute;
+    top: 0vh;
+    left: 0px;
+    text-align: center;
+}
+
+.banner-text {
+    display: inline-flex;
+    line-height: 6vh;
+    font-size: 24px;
+}
