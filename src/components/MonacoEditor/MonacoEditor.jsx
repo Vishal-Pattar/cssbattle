@@ -1,9 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Editor, { useMonaco } from '@monaco-editor/react';
 import './MonacoEditor.css';
 
 const MonacoEditor = ({ codeContent, updateCodeContent }) => {
+    const [charCount, setCharCount] = useState(codeContent.length);
     const monacoInstance = useMonaco();
+
+    const handleEditorChange = (value) => {
+        updateCodeContent(value);
+        setCharCount(value.length);
+    };
 
     useEffect(() => {
         if (monacoInstance) {
@@ -35,7 +41,7 @@ const MonacoEditor = ({ codeContent, updateCodeContent }) => {
         <div className="editor-container">
             <div className="editor-header">
                 <span>Editor</span>
-                <span>500 characters</span>
+                <span>{charCount} characters</span>
             </div>
             <div className="editor-content">
                 <Editor
@@ -44,7 +50,7 @@ const MonacoEditor = ({ codeContent, updateCodeContent }) => {
                     theme="cssBattleTheme"
                     defaultLanguage="html"
                     value={codeContent}
-                    onChange={(value) => updateCodeContent(value)}
+                    onChange={handleEditorChange}
                     options={{
                         minimap: { enabled: false },
                         quickSuggestions: false,
@@ -52,6 +58,7 @@ const MonacoEditor = ({ codeContent, updateCodeContent }) => {
                         suggestOnTriggerCharacters: false,
                         tabCompletion: 'off',
                         wordBasedSuggestions: false,
+                        fontSize: '20px',
                     }}
                 />
             </div>
