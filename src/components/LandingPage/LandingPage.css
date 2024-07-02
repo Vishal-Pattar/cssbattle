@@ -1,0 +1,51 @@
+@import '../../root.css';
+
+.landing-container {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: auto;
+}
+
+.landing-container::-webkit-scrollbar {
+    display: none;
+}
+
+.challenge-box {
+    height: 210px;
+    width: 210px;
+    position: relative;
+    background-color: var(--header-bg-color);
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    margin: 21px;
+}
+
+.challenge-box:hover {
+    box-shadow: 0 0 10px rgba(255,233,0.3), 0 0 0 1px #ffdf00;
+    transform: scale(1.01);
+}
+
+.challenge-img {
+    height: 135px;
+    width: 180px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border-radius: 5px;
+}
+
+.challenge-id {
+    width: 210px;
+    line-height: 25px;
+    color: #fff;
+    position: absolute;
+    top: 160px;
+    text-align: center;
+}
