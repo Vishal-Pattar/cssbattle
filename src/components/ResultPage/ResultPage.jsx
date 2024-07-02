@@ -2,15 +2,13 @@ import React from 'react';
 import './ResultPage.css';
 import { IoCloseCircle } from "react-icons/io5";
 import useShowResult from '../../hooks/useShowResult';
-import useScore from '../../hooks/useScore';
 
-const ResultPage = () => {
+const ResultPage = ({score}) => {
     const [showResult, toggleShowResult] = useShowResult();
-    const [score, updateScore] = useScore();
 
     const handleExit = () => {
         toggleShowResult(false);
-    }
+    };
 
     return (
         <div className='result-body'>
