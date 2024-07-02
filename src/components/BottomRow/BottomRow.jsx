@@ -25,11 +25,14 @@ const BottomRow = ({ id, codeContent }) => {
     };
 
     useEffect(() => {
-        if (score !== -1) {
-            setIsButtonDisabled(false);
-            alert(`You Scored: ${score.toFixed(2)}`);
-        }
-    }, [scoreUpdateTrigger]);
+        const handleScoreChange = () => {
+            if (score !== -1) {
+                setIsButtonDisabled(false);
+                alert(`You Scored: ${score.toFixed(2)}`);
+            }
+        };
+        handleScoreChange();
+    }, [scoreUpdateTrigger, score]);
 
     return (
         <div className="row">
@@ -37,9 +40,9 @@ const BottomRow = ({ id, codeContent }) => {
             className={`submit-button ${isButtonDisabled ? 'disabled' : ''}`} 
             onClick={handleSubmit}
             disabled={isButtonDisabled} >Submit</button>
-            <div>&copy;2024 cssbattle</div>
+            <div>&copy; 2024 Creative Minds - Designed with passion for CSS battles</div>
         </div>
-    );
+    )
 };
 
 export default BottomRow;
