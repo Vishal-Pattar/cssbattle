@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import useScore from '../../hooks/useScore';
+import useShowResult from '../../hooks/useShowResult';
 import './BottomRow.css';
 
 const BottomRow = ({ id, codeContent }) => {
-    const [score, updateScore] = useScore();
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const [scoreUpdateTrigger, setScoreUpdateTrigger] = useState(false);
+    const { showResult, toggleShowResult, score, updateScore } = useShowResult();
 
     const handleSubmit = async () => {
         const payload = {
@@ -25,14 +25,12 @@ const BottomRow = ({ id, codeContent }) => {
     };
 
     useEffect(() => {
-        const handleScoreChange = () => {
-            if (score !== -1) {
-                setIsButtonDisabled(false);
-                alert(`You Scored: ${score.toFixed(2)}`);
-            }
-        };
-        handleScoreChange();
-    }, [scoreUpdateTrigger, score]);
+        if (score !== -1) {
+            setIsButtonDisabled(false);
+            toggleShowResult(true);
+            // alert(`You Scored: ${score.toFixed(2)}`);
+        }
+    }, [scoreUpdateTrigger, score, toggleShowResult]);
 
     return (
         <div className="row">
@@ -40,9 +38,9 @@ const BottomRow = ({ id, codeContent }) => {
             className={`submit-button ${isButtonDisabled ? 'disabled' : ''}`} 
             onClick={handleSubmit}
             disabled={isButtonDisabled} >Submit</button>
-            <div>&copy; 2024 Creative Minds - Designed with passion for CSS battles</div>
+            <div>{showResult.toString()} &copy; 2024 Creative Minds - Designed with passion for CSS battles</div>
         </div>
-    )
+    );
 };
 
 export default BottomRow;
