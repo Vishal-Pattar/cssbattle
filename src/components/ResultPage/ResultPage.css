@@ -15,15 +15,16 @@
     position: absolute;
     top: calc((100vh - var(--result-container-height))/2);
     left: calc((100vw - var(--result-container-width))/2);
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: azure;
+    /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
+    background: #36454F;
+    color: #fff;
     border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
 .exit {
-    color: grey;
+    color: #fff;
     position: absolute;
     top: 0;
     right: 0;
