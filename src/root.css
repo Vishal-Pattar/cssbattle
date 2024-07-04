@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 :root {
     --main-bg-color: #07080b;
-    --text-color: #a0b3c6;
+    --text-color: #fff;
     --header-bg-color: #2a313a;
     --border-color: rgba(160, 179, 198, 0.2);
     --container-height: 85vh;
@@ -8,3 +12,10 @@
     --result-container-height: 200px;
     --result-container-width: 300px;
 }
+
+.playfair-display-author {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
