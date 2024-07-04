@@ -11,6 +11,24 @@
     text-align: center;
 }
 
+.home-button {
+    height: 5vh;
+    width: 6vw;
+    appearance: none;
+    outline: none;
+    border: none;
+    background-color: #39f60e;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+}
+
 .banner-text {
     display: inline-flex;
     line-height: 6vh;
