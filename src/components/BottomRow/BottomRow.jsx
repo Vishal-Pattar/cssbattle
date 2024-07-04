@@ -6,7 +6,7 @@ import './BottomRow.css';
 const BottomRow = ({ id, codeContent }) => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const [scoreUpdateTrigger, setScoreUpdateTrigger] = useState(false);
-    const { showResult, toggleShowResult, score, updateScore } = useShowResult();
+    const { toggleShowResult, score, updateScore } = useShowResult();
 
     const handleSubmit = async () => {
         const payload = {
@@ -30,7 +30,7 @@ const BottomRow = ({ id, codeContent }) => {
             setIsButtonDisabled(false);
             // alert(`You Scored: ${score.toFixed(2)}`);
         }
-    }, [scoreUpdateTrigger, score]);
+    }, [scoreUpdateTrigger, score, isButtonDisabled, toggleShowResult]);
 
     return (
         <div className="row">
