@@ -25,12 +25,12 @@ const BottomRow = ({ id, codeContent }) => {
     };
 
     useEffect(() => {
-        if (score !== -1) {
-            setIsButtonDisabled(false);
+        if (score !== -1 && isButtonDisabled) {
             toggleShowResult(true);
+            setIsButtonDisabled(false);
             // alert(`You Scored: ${score.toFixed(2)}`);
         }
-    }, [scoreUpdateTrigger, score, toggleShowResult]);
+    }, [scoreUpdateTrigger, score]);
 
     return (
         <div className="row">
@@ -38,7 +38,7 @@ const BottomRow = ({ id, codeContent }) => {
             className={`submit-button ${isButtonDisabled ? 'disabled' : ''}`} 
             onClick={handleSubmit}
             disabled={isButtonDisabled} >Submit</button>
-            <div>{showResult.toString()} &copy; 2024 Creative Minds - Designed with passion for CSS battles</div>
+            <div>&copy; 2024 Creative Minds - Designed with passion for CSS battles</div>
         </div>
     );
 };
