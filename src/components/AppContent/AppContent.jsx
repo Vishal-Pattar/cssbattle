@@ -18,7 +18,7 @@ const AppContent = () => {
     return (
         <>
             {showResult ? (
-                <ResultPage/>
+                <ResultPage />
             ) : (
                 <>
                     <TopRow />
