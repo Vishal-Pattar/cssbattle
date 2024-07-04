@@ -51,3 +51,11 @@
     margin: 15px;
     font-size: 18px;
 }
+
+.row div a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: pointer;
+    appearance: none;
+}

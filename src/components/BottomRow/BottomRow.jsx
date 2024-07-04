@@ -38,7 +38,7 @@ const BottomRow = ({ id, codeContent }) => {
             className={`submit-button ${isButtonDisabled ? 'disabled' : ''}`} 
             onClick={handleSubmit}
             disabled={isButtonDisabled} >Submit</button>
-            <div>&copy; 2024 Creative Minds - Designed with passion for CSS battles</div>
+            <div>&copy; 2024 Creative Minds - By <a href='https://github.com/Vishal-Pattar'>Vishal Pattar</a></div>
         </div>
     );
 };
