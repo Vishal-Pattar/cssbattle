@@ -4,7 +4,6 @@
     height: 8vh;
     width: 100vw;
     background-color: var(--main-bg-color);
-    color: var(--text-color);
     position: absolute;
     top: 0vh;
     left: 0px;
@@ -17,8 +16,8 @@
     appearance: none;
     outline: none;
     border: none;
-    background-color: #39f60e;
-    color: #fff;
+    background-color: #fff;
+    color: var(--main-bg-color);
     border-radius: 5px;
     font-weight: 700;
     font-size: 20px;
@@ -30,7 +29,15 @@
 }
 
 .banner-text {
-    display: inline-flex;
-    line-height: 6vh;
-    font-size: 24px;
+    line-height: 7vh;
+    font-size: 32px;
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: grab;
 }

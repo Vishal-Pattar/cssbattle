@@ -12,7 +12,7 @@ const TopRow = () => {
     return (
         <div className="top-row">
             <button type='button' className='home-button' onClick={navigateHome}>Home</button>
-            <div className='banner-text'>Creative-Minds presents CSS Battle</div>
+            <div className='banner-text'>CSS BATTLE</div>
         </div>
     );
 };
