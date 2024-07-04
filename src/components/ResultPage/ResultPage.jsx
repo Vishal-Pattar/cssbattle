@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ResultPage.css';
 import { IoCloseCircle } from "react-icons/io5";
 import useShowResult from '../../hooks/useShowResult';
 
 const ResultPage = () => {
     const { showResult, toggleShowResult, score } = useShowResult();
-    const [exit, setExit] = useState(false);
 
     const handleExit = () => {
-        setExit(true);
+        toggleShowResult(false);
     };
-
-    useEffect(() => {
-        if (exit) {
-            toggleShowResult(false);
-            setExit(false);
-        }
-    }, [exit, toggleShowResult]);
 
     if (!showResult) return null;
 
@@ -26,7 +18,7 @@ const ResultPage = () => {
                 <div className='exit' onClick={handleExit}><IoCloseCircle size={'25px'} /></div>
                 <div className='text text1'>Congratulations</div>
                 <div className='text text2'>You scored</div>
-                <div className='text text3'>{score.toFixed(2)+" %"}</div>
+                <div className='text text3'>{score.toFixed(2) + " %"}</div>
             </div>
         </div>
     );
