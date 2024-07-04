@@ -24,6 +24,8 @@
     color: var(--text-color);
     border-top: 2px solid var(--border-color);
     border-bottom: 2px solid var(--border-color);
+    user-select: none;
+    cursor: grab;
 }
 
 .output-header span {
