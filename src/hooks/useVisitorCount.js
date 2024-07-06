@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const useVisitorCount = () => {
-    const [visitorCount, setVisitorCount] = useState();
+    const [visitorCount, setVisitorCount] = useState(0);
 
     const fetchVisitorCount = async () => {
         try {
