@@ -16,7 +16,7 @@ const BottomRow = ({ id, codeContent }) => {
 
         try {
             setIsButtonDisabled(true);
-            const response = await axios.post('https://cssbattle-backend.onrender.com/process', payload);
+            const response = await axios.post(`${process.env.REACT_APP_URL}/process`, payload);
             updateScore(response.data.score);
             setScoreUpdateTrigger(prev => !prev);
         } catch (error) {
