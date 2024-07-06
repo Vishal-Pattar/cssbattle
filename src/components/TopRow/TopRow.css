@@ -14,8 +14,7 @@
 }
 
 .home-button {
-    height: 5vh;
-    width: 6vw;
+    padding: 1vh 1.5vw;
     appearance: none;
     outline: none;
     border: none;
@@ -38,6 +37,9 @@
     color: #fff;
     user-select: none;
     cursor: grab;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .visitor-count {
@@ -49,4 +51,6 @@
     font-weight: 500;
     font-style: normal;
     margin-right: 1vw;
+    transition: 0.2 ease;
+    user-select: none;
 }
