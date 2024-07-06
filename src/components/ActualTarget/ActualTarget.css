@@ -35,18 +35,21 @@
 .target-render {
     height: 300px;
     width: 400px;
-    position: absolute;
-    top: calc(5vh + 25px + 4px);
-    left: 25px;
+    position: relative;
+    margin-top: 25px;
+    box-sizing: content-box;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .color-pallet {
     height: 100px;
     width: 400px;
     background-color: var(--main-bg-color);
-    position: absolute;
-    top: calc(5vh + 350px + 4px);
-    left: 25px;
+    position: relative;
+    margin-top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-wrap: wrap;
 }
