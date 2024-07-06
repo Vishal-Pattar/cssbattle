@@ -13,6 +13,7 @@ const TopRow = () => {
         <div className="top-row">
             <button type='button' className='home-button' onClick={navigateHome}>Home</button>
             <div className='banner-text'>CSS BATTLE</div>
+            <div className='visitor-count'>Visitor Count: 0</div>
         </div>
     );
 };
