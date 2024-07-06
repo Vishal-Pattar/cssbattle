@@ -2,16 +2,17 @@
 
 .editor-container {
     height: var(--container-height);
-    width: calc(100vw - 902px);
+    width: calc(100vw - 900px);
     background: var(--main-bg-color);
     position: absolute;
     top: 0;
     left: 0;
+    box-sizing: content-box;
 }
 
 .editor-header {
     height: 5vh;
-    width: calc(100vw - 902px);
+    width: calc(100vw - 900px);
     background-color: var(--header-bg-color);
     position: relative;
     display: flex;
@@ -24,6 +25,7 @@
     border-bottom: 2px solid var(--border-color);
     user-select: none;
     cursor: grab;
+    box-sizing: content-box;
 }
 
 .editor-header span {
@@ -32,8 +34,9 @@
 
 .editor-content {
     height: calc(var(--container-height) - 5vh - 14px);
-    width: calc(100vw - 904px);
+    width: calc(100vw - 900px);
     position: relative;
     top: 10px;
     background-color: var(--main-bg-color);
+    box-sizing: content-box;
 }
