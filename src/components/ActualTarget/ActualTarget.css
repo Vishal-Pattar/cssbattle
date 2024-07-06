@@ -7,6 +7,7 @@
     position: absolute;
     top: 0vh;
     right: 0px;
+    box-sizing: content-box;
 }
 
 .target-header {
@@ -24,6 +25,7 @@
     border-bottom: 2px solid var(--border-color);
     user-select: none;
     cursor: grab;
+    box-sizing: content-box;
 }
 
 .target-header span {
